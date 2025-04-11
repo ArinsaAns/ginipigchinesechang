@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Our Courses, Internships, Ideathon, and Blogathon opportunities at ARINSA AI MINDS.">
+    <title>Our Courses & Opportunities | ARINSA AI MINDS</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script defer src="assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/YOUR-REAL-KIT-ID.js" crossorigin="anonymous"></script>
+    <style>
+        
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, h1, h2, h3, h4, h5, h6, p, a, span, li {
+            color: gold !important;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            min-height: 100vh;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Logo */
+        .logo {
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .logo img {
+            width: 150px; /* Adjust the size of your logo */
+            height: auto;
+        }
+
+        /* Home Button */
+        .home-button {
+            position: fixed;
+            top: 30px; /* Adjust this value to give space for the logo */
+            left: 250px;
+            background-color: black;
+            color: gold;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .home-button:hover {
+            background-color: gold;
+            color: black;
+        }
+
+        /* Main Content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-top: 60px; /* Adjust to make space for the home button */
+            padding: 20px;
+            width: 80%; /* Default width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        /* Course and Internship Section */
+        .section-box {
+            width: 100%; /* Full width for smaller screens */
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.95);
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.95);
+        }
+
+        .section-box h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .section-box ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .section-box ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .section-box .fee-info {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .internship-fees table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .internship-fees table, th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .internship-fees table th {
+            background-color: black;
+            color: gold;
+        }
+
+        /* Flexbox for Course Description and Table */
+        .course-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .course-description {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .course-details {
+            width: 100%;
+            max-width: 800px; /* Limit the width of the table */
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .course-details table {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .course-details th, .course-details td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .course-details th {
+            background-color: black;
+            color: gold;
+        }
+
+        /* Footer */
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 5px;
+            background: black;
+            font-size: 18px;
+            font-weight: bold;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 80px; /* Adjust for mobile */
+                width: 95%; /* Decrease width to fit better on smaller screens */
+                padding: 15px; /* Reduce padding */
+            }
+
+            .content h1 {
+                font-size: 28px;
+            }
+
+            .content p {
+                font-size: 16px;
+            }
+
+            .section-box {
+                padding: 15px; /* Reduce padding for mobile */
+            }
+
+            .section-box h2 {
+                font-size: 25px; /* Adjust heading size */
+            }
+
+            .section-box ul li {
+                font-size: 16px; /* Adjust list item font size */
+            }
+
+            .course-container {
+                flex-direction: column; /* Stack items on smaller screens */
+                align-items: stretch;
+            }
+
+            .course-description {
+                margin-right: 0;
+            }
+
+            .course-details {
+                margin-top: 20px;
+            }
+        }
+        /* Background Animation */
+@keyframes moveBoxes {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-10px) translateX(10px) rotate(10deg); }
+    100% { transform: translateY(0) translateX(0); }
+
+}
+/* Floating animation effect */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px) scale(1); opacity: 1; }
+    100% { transform: translateY(-20px) scale(1.1); opacity: 0.8; }
+}
+
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.animated-background div {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: gold;
+    opacity: 0.7;
+    animation: moveBoxes 4s infinite alternate ease-in-out;
+    border-radius: 3px;
+}
+.animated-background div:nth-child(1) { top: 2.5%; left: 12.5%; animation-duration: 3.5s; }
+.animated-background div:nth-child(2) { top: 5%; left: 20%; animation-duration: 4s; }
+.animated-background div:nth-child(3) { top: 10%; left: 30%; animation-duration: 4.2s; }
+.animated-background div:nth-child(4) { top: 15%; left: 25%; animation-duration: 3.8s; }
+.animated-background div:nth-child(5) { top: 18%; left: 35%; animation-duration: 3.9s; }
+.animated-background div:nth-child(6) { top: 25%; left: 40%; animation-duration: 4.1s; }
+.animated-background div:nth-child(7) { top: 30%; left: 45%; animation-duration: 4.5s; }
+.animated-background div:nth-child(8) { top: 35%; left: 10%; animation-duration: 4.3s; }
+.animated-background div:nth-child(9) { top: 40%; left: 50%; animation-duration: 3.6s; }
+.animated-background div:nth-child(10) { top: 50%; left: 60%; animation-duration: 3.7s; }
+.animated-background div:nth-child(11) { top: 60%; left: 70%; animation-duration: 4s; }
+.animated-background div:nth-child(12) { top: 65%; left: 15%; animation-duration: 4.4s; }
+.animated-background div:nth-child(13) { top: 70%; left: 25%; animation-duration: 3.5s; }
+.animated-background div:nth-child(14) { top: 80%; left: 30%; animation-duration: 3.6s; }
+.animated-background div:nth-child(15) { top: 85%; left: 5%; animation-duration: 4.2s; }
+.animated-background div:nth-child(16) { top: 90%; left: 55%; animation-duration: 4.1s; }
+.animated-background div:nth-child(17) { top: 15%; left: 75%; animation-duration: 4.5s; }
+.animated-background div:nth-child(18) { top: 22.5%; left: 12%; animation-duration: 3.8s; }
+.animated-background div:nth-child(19) { top: 30%; left: 62.5%; animation-duration: 4.3s; }
+.animated-background div:nth-child(20) { top: 33%; left: 48%; animation-duration: 4.7s; }
+.animated-background div:nth-child(21) { top: 45%; left: 20%; animation-duration: 4.6s; }
+.animated-background div:nth-child(22) { top: 50%; left: 77.5%; animation-duration: 3.9s; }
+.animated-background div:nth-child(23) { top: 58%; left: 17%; animation-duration: 4s; }
+.animated-background div:nth-child(24) { top: 62%; left: 29%; animation-duration: 3.7s; }
+.animated-background div:nth-child(25) { top: 70%; left: 80%; animation-duration: 4.1s; }
+.animated-background div:nth-child(26) { top: 80%; left: 10%; animation-duration: 4.3s; }
+.animated-background div:nth-child(27) { top: 85%; left: 40%; animation-duration: 3.8s; }
+.animated-background div:nth-child(28) { top: 90%; left: 30%; animation-duration: 4s; }
+.animated-background div:nth-child(29) { top: 5%; left: 50%; animation-duration: 3.9s; }
+.animated-background div:nth-child(30) { top: 10%; left: 60%; animation-duration: 4.2s; }
+.animated-background div:nth-child(31) { top: 12%; left: 70%; animation-duration: 4.4s; }
+.animated-background div:nth-child(32) { top: 15%; left: 80%; animation-duration: 3.8s; }
+.animated-background div:nth-child(33) { top: 20%; left: 15%; animation-duration: 3.7s; }
+.animated-background div:nth-child(34) { top: 23%; left: 28%; animation-duration: 4s; }
+.animated-background div:nth-child(35) { top: 26%; left: 35%; animation-duration: 3.5s; }
+.animated-background div:nth-child(36) { top: 30%; left: 55%; animation-duration: 4.2s; }
+.animated-background div:nth-child(37) { top: 32%; left: 60%; animation-duration: 4.1s; }
+.animated-background div:nth-child(38) { top: 35%; left: 5%; animation-duration: 3.6s; }
+.animated-background div:nth-child(39) { top: 40%; left: 45%; animation-duration: 3.9s; }
+.animated-background div:nth-child(40) { top: 42%; left: 70%; animation-duration: 4.4s; }
+.animated-background div:nth-child(41) { top: 45%; left: 55%; animation-duration: 4.3s; }
+.animated-background div:nth-child(42) { top: 47%; left: 35%; animation-duration: 3.8s; }
+.animated-background div:nth-child(43) { top: 50%; left: 65%; animation-duration: 4s; }
+.animated-background div:nth-child(44) { top: 53%; left: 5%; animation-duration: 3.7s; }
+.animated-background div:nth-child(45) { top: 55%; left: 75%; animation-duration: 3.5s; }
+.animated-background div:nth-child(46) { top: 58%; left: 10%; animation-duration: 4.1s; }
+.animated-background div:nth-child(47) { top: 62%; left: 40%; animation-duration: 4.2s; }
+.animated-background div:nth-child(48) { top: 65%; left: 20%; animation-duration: 3.8s; }
+.animated-background div:nth-child(49) { top: 68%; left: 50%; animation-duration: 4.3s; }
+.animated-background div:nth-child(50) { top: 72%; left: 15%; animation-duration: 4.1s; }
+.animated-background div:nth-child(51) { top: 75%; left: 35%; animation-duration: 4.5s; }
+.animated-background div:nth-child(52) { top: 78%; left: 60%; animation-duration: 3.9s; }
+.animated-background div:nth-child(53) { top: 80%; left: 45%; animation-duration: 4.4s; }
+.animated-background div:nth-child(54) { top: 82%; left: 55%; animation-duration: 4.2s; }
+.animated-background div:nth-child(55) { top: 85%; left: 30%; animation-duration: 4s; }
+.animated-background div:nth-child(56) { top: 88%; left: 40%; animation-duration: 3.7s; }
+.animated-background div:nth-child(57) { top: 90%; left: 20%; animation-duration: 3.8s; }
+.animated-background div:nth-child(58) { top: 92%; left: 10%; animation-duration: 3.9s; }
+.animated-background div:nth-child(59) { top: 5%; left: 40%; animation-duration: 4.1s; }
+.animated-background div:nth-child(60) { top: 12%; left: 50%; animation-duration: 3.5s; }
+.animated-background div:nth-child(61) { top: 18%; left: 60%; animation-duration: 4.3s; }
+.animated-background div:nth-child(62) { top: 22%; left: 75%; animation-duration: 4s; }
+.animated-background div:nth-child(63) { top: 27%; left: 85%; animation-duration: 3.6s; }
+.animated-background div:nth-child(64) { top: 30%; left: 35%; animation-duration: 3.8s; }
+.animated-background div:nth-child(65) { top: 32%; left: 50%; animation-duration: 4.1s; }
+.animated-background div:nth-child(66) { top: 35%; left: 45%; animation-duration: 4.2s; }
+.animated-background div:nth-child(67) { top: 38%; left: 70%; animation-duration: 4.3s; }
+.animated-background div:nth-child(68) { top: 40%; left: 20%; animation-duration: 3.7s; }
+.animated-background div:nth-child(69) { top: 45%; left: 15%; animation-duration: 4.4s; }
+.animated-background div:nth-child(70) { top: 47%; left: 55%; animation-duration: 3.9s; }
+.animated-background div:nth-child(71) { top: 50%; left: 30%; animation-duration: 4.5s; }
+.animated-background div:nth-child(72) { top: 53%; left: 80%; animation-duration: 3.7s; }
+.animated-background div:nth-child(73) { top: 58%; left: 10%; animation-duration: 4.3s; }
+.animated-background div:nth-child(74) { top: 60%; left: 45%; animation-duration: 4.2s; }
+.animated-background div:nth-child(75) { top: 65%; left: 70%; animation-duration: 4.4s; }
+.animated-background div:nth-child(76) { top: 70%; left: 50%; animation-duration: 3.6s; }
+.animated-background div:nth-child(77) { top: 72%; left: 55%; animation-duration: 4.3s; }
+.animated-background div:nth-child(78) { top: 75%; left: 40%; animation-duration: 4.1s; }
+
+.animated-background div:nth-child(79) { top: 2.5%; left: 87.5%; animation-duration: 3.6s; }
+.animated-background div:nth-child(80) { top: 5%; left: 90%; animation-duration: 3.7s; }
+
+.animated-background div:nth-child(81) { top: 15%; left: 88%; animation-duration: 4.3s; }
+.animated-background div:nth-child(82) { top: 20%; left: 85%; animation-duration: 3.9s; }
+
+.animated-background div:nth-child(83) { top: 30%; left: 87%; animation-duration: 4.2s; }
+.animated-background div:nth-child(84) { top: 35%; left: 90%; animation-duration: 3.8s; }
+.animated-background div:nth-child(85) { top: 40%; left: 85%; animation-duration: 4s; }
+
+.animated-background div:nth-child(86) { top: 50%; left: 92%; animation-duration: 3.6s; }
+.animated-background div:nth-child(87) { top: 55%; left: 87%; animation-duration: 4.1s; }
+
+.animated-background div:nth-child(88) { top: 75%; left: 92%; animation-duration: 4.4s; }
+
+.animated-background div:nth-child(89) { top: 85%; left: 90%; animation-duration: 4.1s; }
+
+.animated-background div:nth-child(90) { top: 95%; left: 88%; animation-duration: 3.7s; }
+
+
+.animated-background div:nth-child(90) { top: 25%; left: 78%; animation-duration: 3.7s; }
+.animated-background div:nth-child(90) { top: 3%; left: 68%; animation-duration: 3.7s; }
+
+.animated-background div:nth-child(101) { top: 85%; left: 70%; animation-duration: 4.2s; }
+.animated-background div:nth-child(102) { top: 88%; left: 78%; animation-duration: 3.8s; }
+.animated-background div:nth-child(103) { top: 90%; left: 86%; animation-duration: 4s; }
+
+    </style>
+</head>
+<body>
+
+    <div class="animated-background">
+        <!-- 960 divs -->
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+    </div>
+
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="../assets/images/logo.png" alt="Your Logo" />
+    </div>
+
+    <!-- Home Button -->
+    <a href="../index.html" class="home-button">Home</a>
+
+    <div class="container">
+        <!-- Main Content -->
+        <div class="content">
+		
+		<section class="section-box">
+    <h2>Consent to Record</h2>
+    <h4>
+        By participating in the Ideathon organized by ARINSA AI Minds, you acknowledge and agree to the following terms regarding the recording and broadcasting of the event:
+        <br><br>
+        <strong>1. Recording and Broadcast:</strong> You consent to being recorded during the Ideathon event, including but not limited to the live discussions, presentations, and any other activities where your participation may be captured in audio or video format. The session may be recorded by ARINSA AI Minds for the purpose of sharing, promoting, and distributing the content.
+        <br><br>
+        <strong>2. Use of Recorded Content:</strong> You grant ARINSA AI Minds the right to use the recorded content, which may include your voice, image, presentation, and any other contributions made during the event, for educational, promotional, and marketing purposes. This content may be shared publicly through various platforms, including but not limited to YouTube, LinkedIn, the ARINSA AI Minds website, and social media channels.
+        <br><br>
+        <strong>3. Public Exposure:</strong> By consenting to this recording, you understand and agree that your participation may be broadcasted to a global audience through digital platforms. The session will be made available for public viewing, and your idea and contributions may be heard, viewed, and accessed by a wide audience.
+        <br><br>
+        <strong>4. No Compensation:</strong> You acknowledge that ARINSA AI Minds may use the recorded content without any obligation to provide compensation, royalties, or any other form of remuneration. The use of your recorded material will be solely for the purposes mentioned above.
+        <br><br>
+        <strong>5. Right to Edit and Modify:</strong> You consent to ARINSA AI Minds editing, modifying, or otherwise altering the recorded content as necessary to fit the context of promotional materials, podcasts, and public broadcasts. This may include editing the video/audio for clarity, length, or other purposes that align with the goals of the Ideathon.
+        <br><br>
+        <strong>6. Waiver of Claims:</strong> By providing your consent, you waive any rights to inspect or approve the final version of the recorded content or how it is used. You also waive any claims or rights to compensation for the use of your name, likeness, voice, and contributions in the recorded content.
+        <br><br>
+        <strong>7. Withdrawal of Consent:</strong> If you wish to withdraw your consent to be recorded or broadcasted after agreeing to participate, you must inform ARINSA AI Minds in writing before the start of the recording. However, once the session is recorded and broadcasted, you acknowledge that it may not be possible to retract or remove the content from public platforms.
+        <br><br>
+        <strong>8. Acknowledgment of Consent:</strong> By submitting your registration and participating in the Ideathon, you confirm that you have read, understood, and agree to the terms outlined in this Consent to Record. You further acknowledge that you are providing consent voluntarily and without any duress or coercion.
+    </h4>
+</section>
+
+<section class="section-box">
+    <h2>Agreement to Terms and Conditions</h2>
+    <h4>
+        <strong>Terms and Conditions for Participation in the Ideathon by ARINSA AI Minds</strong>
+        <br><br>
+        By participating in the Ideathon organized by ARINSA AI Minds, you (the participant) agree to abide by the following Terms and Conditions:
+        <br><br>
+        <strong>1. Eligibility:</strong> Participation is open to individuals and teams from any background, provided they are at least 18 years of age or have obtained parental consent if under 18. Participants must submit original ideas. Plagiarism or submission of any idea that violates intellectual property rights will result in disqualification.
+        <br><br>
+        <strong>2. Registration:</strong> Participants must complete the registration process by providing accurate personal details and a valid email address. Incomplete or false submissions will be disqualified.
+        <br><br>
+        <strong>3. Idea Submission:</strong> By submitting your idea, you confirm that it is your original work and does not infringe on any third-party intellectual property. Each idea must include a problem description, proposed solution, and potential impact. Prototypes or proof of concept are optional.
+        <br><br>
+        <strong>4. Evaluation and Selection:</strong> All ideas will be reviewed by experts at ARINSA AI Minds. The decision of the judges is final. Selected ideas will be discussed with the ARINSA AI Minds team, and the session may be recorded for promotional purposes.
+        <br><br>
+        <strong>5. Consent to Recording and Broadcast:</strong> By participating, you consent to being recorded. Recordings may be shared on platforms like YouTube and LinkedIn for marketing and educational purposes without further consent or compensation.
+        <br><br>
+        <strong>6. Ownership of Ideas:</strong> Participants retain ownership but grant ARINSA AI Minds a non-exclusive, royalty-free license to use ideas for evaluation, feedback, and promotion. Selected participants may receive collaboration or partnership offers.
+        <br><br>
+        <strong>7. Plagiarism Policy:</strong> Plagiarized content, including ideas, designs, or prototypes, will result in disqualification. Copying without attribution is prohibited.
+        <br><br>
+        <strong>8. Confidentiality:</strong> Participants must keep any confidential information disclosed during the Ideathon or subsequent discussions confidential and not share proprietary details without prior consent.
+        <br><br>
+        <strong>9. Terms of Use:</strong> Participants agree to adhere to these terms and any additional rules set forth by ARINSA AI Minds. Terms may be updated, and participants will be notified of significant changes.
+        <br><br>
+        <strong>10. Liability Disclaimer:</strong> ARINSA AI Minds is not responsible for any loss, damage, or disputes arising from participation, including technical issues or intellectual property conflicts.
+        <br><br>
+        <strong>11. Prizes and Recognition:</strong> Selected participants will receive recognition, and their ideas may be featured on ARINSA AI Minds platforms. Awards and benefits are at the discretion of ARINSA AI Minds.
+        <br><br>
+        <strong>12. Governing Law and Dispute Resolution:</strong> These terms are governed by the laws of the country where ARINSA AI Minds operates. Disputes will be resolved through negotiation or binding arbitration.
+        <br><br>
+        <strong>13. Indemnity:</strong> Participants agree to indemnify and hold harmless ARINSA AI Minds from any claims, liabilities, or damages arising from participation in the Ideathon.
+        <br><br>
+        <strong>14. Privacy Policy:</strong> Personal data collected will be used solely for Ideathon-related purposes in accordance with ARINSA AI Minds' Privacy Policy.
+        <br><br>
+        <strong>15. Acceptance of Terms:</strong> By submitting an idea, participants confirm they have read, understood, and agreed to these Terms and Conditions. Those who do not agree should not participate.
+    </h4>
+</section>
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ARINSA AI MINDS. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
